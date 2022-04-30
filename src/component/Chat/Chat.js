@@ -8,7 +8,7 @@ import ReactScrollToBottom from "react-scroll-to-bottom"
 import close from "../../images/close.png";
 
 let socket;
-const ENDPOINT="http://localhost:4500/";
+const ENDPOINT="https://cchatrealapp.herokuapp.com/";
 
 const Chat = () => {
    
@@ -85,7 +85,7 @@ socket.off();
   }
 </ReactScrollToBottom>
 <div className="inputBox">
-  <input type="text" id='chatInput' />
+  <input onKeyPress={(event)=>event.key==='Enter'?send():''} type="text" id='chatInput' />
   <button  onClick={send} className='sendBtn'><img src={img} alt="" /></button>
 </div>
 
